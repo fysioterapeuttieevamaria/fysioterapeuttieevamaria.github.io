@@ -1,232 +1,329 @@
 <!DOCTYPE html>
-<html lang="fi">
-<head>
-	<meta charset="utf-8" />
-	<title>Fysioterapeutti Eeva-Maria Halminen</title>
-    <link rel="icon" type="image/x-icon" href="emh.ico">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="Fysioterapeutti, fysioterapia, urheiluhieroja ja PhysioPilates-ohjaaja Eeva-Maria Halminen, Tampere" />
-	<meta name="keywords" content="Fysioterapeutti, fysioterapia, urheiluhieroja, PhysioPilates, Halminen, Tampere" />
-<!-- FONT -->
-	<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Lato">
-<!-- CSS -->
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.2.269">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>eevamaria.fi - CV</title>
 <style>
-/* MAIN */
-	html {
-		overflow-y:
-		scroll;
-		}
-	body {
-		background:ghostwhite;
-		color:black;
-		/* display: flex; */
-		justify-content: center;
-		align-items: center;
-		height: 100vh;
-		}
-	p {
-		margin:0 0 10px;
-		line-height:1.4em;
-		}
-	ul {
-		list-style:none;
-		margin:0;
-		}
-	ul li {
-		margin:0;
-		padding:0;
-		}
-	aside, contact, header, nav, section {
-	    display:block;
-		}
-/* STRUCTURE */
-	#wrapper {
-		width:96%;
-		max-width:600px;
-		margin:auto;
-		padding:2%;
-		}
-/* a */
-	#contact a:link    {color:black; text-decoration:none;}
-	#contact a:visited {color:black; text-decoration:none;}
-	#contact a:active  {color:black; text-decoration:none;}
-	#contact a:hover   {color:black; text-decoration:none; transition: .5s;}
-	#links a:link    {color:black; text-decoration:none;}
-	#links a:visited {color:black; text-decoration:none;}
-	#links a:active  {color:black; text-decoration:none;}
-	#links a:hover   {color:black; text-decoration:none;}
-/* HEADER */
-	#head1 {
-		float:center;
-		font-size:2.6em;
-		color:black;
-		font-family: 'Lato', 'Arial';
-		letter-spacing:4px;
-		margin-bottom:20px;
-		margin-top:10px;
-		text-transform:uppercase;
-		background:transparent;
-		width:100%;
-		text-align:center;
-		padding-left: 4px;
-		padding-top: 4px;
-		}
-	#head2 {
-		float:center;
-		font-size:2em;
-		color:black;
-		font-family: 'Lato', 'Arial';
-		letter-spacing:10px;
-		margin-bottom:10px;
-		margin-top:10px;
-		background:transparent;
-		width:100%;
-		text-align:left;
-		padding-left: 4px;
-		padding-top: 4px;
-		}
-	#head3 {
-		float:center;
-		font-size:1.4em;
-		color:black;
-		font-family: 'Lato', 'Arial';
-		letter-spacing:4px;
-		margin-bottom:15px;
-		margin-top:15px;
-		text-transform:uppercase;
-		background:transparent;
-		width:100%;
-		text-align:left;
-		padding-left: 4px;
-		padding-top: 4px;
-		}
-	#head4 {
-		float:center;
-		font-size:1.2em;
-		color:black;
-		font-family: 'Lato', 'Arial';
-		letter-spacing:1px;
-		margin-bottom:15px;
-		margin-top:15px;
-		/* text-transform:uppercase; */
-		background:transparent;
-		width:100%;
-		text-align:left;
-		padding-left: 4px;
-		padding-top: 4px;
-		}
-/* EMAIL + PHOTO */
-	#contact {
-		margin-left:0px;
-		background:transparent;
-		color:black;
-		clear:both;
-		text-align:center;
-		width:100%;
-		font-family: 'Lato', 'Arial';
-		}
-	#contact p {
-		padding:10px 0;
-		margin:0;
-		color:black;
-		font-size:16px;
-		font-family: 'Lato', 'Arial';
-		letter-spacing:4px;
-		padding-left: 4px;
-		}
-	#contact p a img {
-		margin: 0 15px 0 0;
-		}
-/* LINKS OUTSIDE */
-	#links {
-		margin-left:0px;
-		background:transparent;
-		color:black;
-		clear:both;
-		text-align:center;
-		width:100%;
-		font-family: 'Lato', 'Arial';
-		padding-top:20px;
-		margin:0;
-	}
-	.button {
-		--offset: 10px;
-		--border-size: 2px;
-		font-size:12px;
-		letter-spacing:6px;
-		position: center;
-		padding: 1.5em 3em;
-		appearance: none;
-		border: 0;
-		background: transparent;
-		color:black;
-		text-transform: uppercase;
-		letter-spacing: .25em;
-		outline: none;
-		cursor: pointer;
-		font-weight: bold;
-		border-radius: 0;
-		box-shadow: inset 0 0 0 var(--border-size) black;
-		transition: background 1.5s ease;
-		width: 300px;
-	}
-	.button:hover {
-		background:black;
-		color:ghostwhite;
-	}
-	.responsive {
-	  width: 100%;
-	  max-width: 600px;
-	  height: auto;
-	}
-	@media all and (max-width:30em){
-	 a.button{
-	  display:block;
-	  margin:0.4em auto;}
-	 }
-/* Media Queries */
-	@media screen and (max-width:480px) {
-		#main, aside {
-			float:center;
-			clear:center;
-			margin:0 0 10px;
-			width:100%;}
-		#head1 {font-size:2.4em;
-				letter-spacing:4px;}
-		#head2 {font-size:2em; letter-spacing:3px;}
-		#contact p {font-size:14px;
-				letter-spacing:1px;}
-		}
-	</style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1.6em;
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<link href="./favicon.ico" rel="icon">
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit"
+  }
+}</script>
+
+
+<link rel="stylesheet" href="styles.css">
 </head>
-<body>
-<div id="wrapper">
-<div id="head1"><b>Eeva-Maria Halminen</b></div>
-	<div id="contact"><img src="c.jpg" alt="Eeva-Maria Halminen" class="responsive"></div>
-	<div id="head2"><p><b>CV</b></p></div>
-<div id="head3"><p><b>Sijainti:</b></p></div>
-	<div id="head4"><p>&nbsp;Tampere</p></div>
-<div id="head3"><p><b>Koulutukset:</b></p></div>
-	<div id="head4">
-		<p>&nbsp;Fysioterapeutti</p>
-		<p>&nbsp;PhysioPilates-ohjaaja</p>
-		<p>&nbsp;Urheiluhierojan erikoisammattitutkinto</p>
-	</div>
-		
-<div id="head3"><p><b>Kurssit:</b></p></div>
-	<div id="head4">
-		<p>&nbsp;Faskiamanipulaatio&#174; taso 1</p>
-		<p>&nbsp;Lantionpohjan fysioterapian täydennyskoulutus</p>
-		<p>&nbsp;Äitiysfysioterapian perusteet</p>
-		<p>&nbsp;Alaraajojen liikekontrollihäiriöt</p>
-		<p>&nbsp;Vatsakapseli, erkauma ja sonopalpaatio</p>
-		<p>&nbsp;Footbic-ohjaajakoulutus</p>
-		<p>&nbsp;Spiral Stabilization 1A & 1B</p>
-		<p>&nbsp;Tuki- ja liikuntaelinsairauksien syventävät opinnot</p>
-		<p>&nbsp;Fascia ja Foamroller -ohjaajakoulutus</p>
-		<p>&nbsp;FISAF Kuntosaliohjaaja</p>
-	</div>
-<div id="contact"><p><a href="index.html" target="_top"> << etusivulle</a></p></div>
+
+<body class="nav-fixed fullcontent">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-dark ">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container">
+    <a class="navbar-brand" href="./index.html">
+    <span class="navbar-title">eevamaria.fi</span>
+    </a>
+  </div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="./index.html">
+ <span class="menu-text">Etusivu</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link active" href="./cv.html" aria-current="page">
+ <span class="menu-text">CV</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./blogi.html">
+ <span class="menu-text">Blogitekstit</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./ajanvaraus.html">
+ <span class="menu-text">Ajanvaraus</span></a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://www.instagram.com/fysioterapeuttieevamaria"><i class="bi bi-instagram" role="img">
+</i> 
+ <span class="menu-text"></span></a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://www.facebook.com/Fysioterapeuttieevamaria"><i class="bi bi-facebook" role="img">
+</i> 
+ <span class="menu-text"></span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">CV</h1>
 </div>
-</body>
-</html>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+</header>
+
+<section id="eeva-maria-halminen" class="level2">
+<h2 class="anchored" data-anchor-id="eeva-maria-halminen">Eeva-Maria Halminen</h2>
+<p><img src="c.jpg" class="img-fluid"></p>
+<section id="suoritetut-koulutukset" class="level3">
+<h3 class="anchored" data-anchor-id="suoritetut-koulutukset">Suoritetut koulutukset</h3>
+<ul>
+<li>Fysioterapeutti</li>
+<li>PhysioPilates-ohjaaja</li>
+<li>Urheiluhierojan erikoisammattitutkinto</li>
+</ul>
+</section>
+<section id="suoritetut-kurssit" class="level3">
+<h3 class="anchored" data-anchor-id="suoritetut-kurssit">Suoritetut kurssit</h3>
+<ul>
+<li>Faskiamanipulaatio® taso 1</li>
+<li>Lantionpohjan fysioterapian täydennyskoulutus</li>
+<li>Äitiysfysioterapian perusteet</li>
+<li>Alaraajojen liikekontrollihäiriöt</li>
+<li>Vatsakapseli, erkauma ja sonopalpaatio</li>
+<li>Footbic-ohjaajakoulutus</li>
+<li>Spiral Stabilization 1A &amp; 1B</li>
+<li>Tuki- ja liikuntaelinsairauksien syventävät opinnot</li>
+<li>Fascia ja Foamroller -ohjaajakoulutus</li>
+<li>FISAF Kuntosaliohjaaja</li>
+</ul>
+
+
+</section>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    target: function(trigger) {
+      return trigger.previousElementSibling;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+      <div class="nav-footer-center">
+        <ul class="footer-items list-unstyled">
+    <li class="nav-item compact">
+    <a class="nav-link" href="https://www.instagram.com/fysioterapeuttieevamaria">
+      <i class="bi bi-instagram" role="img">
+</i> 
+    </a>
+  </li>  
+    <li class="nav-item compact">
+    <a class="nav-link" href="https://www.facebook.com/Fysioterapeuttieevamaria">
+      <i class="bi bi-facebook" role="img">
+</i> 
+    </a>
+  </li>  
+    <li class="nav-item compact">
+    <a class="nav-link" href="https://fi.linkedin.com/in/eeva-maria-halminen">
+      <i class="bi bi-linkedin" role="img">
+</i> 
+    </a>
+  </li>  
+    <li class="nav-item compact">
+    <a class="nav-link" href="mailto:fysioterapeutti.eevamaria@gmail.com">
+      <i class="bi bi-envelope" role="img">
+</i> 
+    </a>
+  </li>  
+</ul>
+      </div>
+  </div>
+</footer>
+
+
+
+</body></html>

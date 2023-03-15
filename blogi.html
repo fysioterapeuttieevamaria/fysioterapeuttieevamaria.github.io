@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="fi" xml:lang="fi"><head>
 
 <meta charset="utf-8">
 <meta name="generator" content="quarto-1.2.269">
@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>eevamaria.fi - Blogitekstit</title>
+<title>eevamaria.fi - Blogi</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -25,8 +25,14 @@ ul.task-list li input[type="checkbox"] {
 
 <script src="site_libs/quarto-nav/quarto-nav.js"></script>
 <script src="site_libs/quarto-nav/headroom.min.js"></script>
-<link href="./favicon.ico" rel="icon">
 <script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<link href="./favicon.ico" rel="icon">
+<script src="site_libs/quarto-listing/list.min.js"></script>
+<script src="site_libs/quarto-listing/quarto-listing.js"></script>
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -37,24 +43,60 @@ ul.task-list li input[type="checkbox"] {
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 20,
   "language": {
-    "search-no-results-text": "No results",
-    "search-matching-documents-text": "matching documents",
-    "search-copy-link-title": "Copy link to search",
-    "search-hide-matches-text": "Hide additional matches",
-    "search-more-match-text": "more match in this document",
-    "search-more-matches-text": "more matches in this document",
-    "search-clear-button-title": "Clear",
-    "search-detached-cancel-button-title": "Cancel",
-    "search-submit-button-title": "Submit"
+    "search-no-results-text": "Ei tuloksia",
+    "search-matching-documents-text": "tulokset",
+    "search-copy-link-title": "Kopioi linkki hakuun",
+    "search-hide-matches-text": "Piilota loput tulokset",
+    "search-more-match-text": "tulos tässä dokumentissa",
+    "search-more-matches-text": "tulosta tässä dokumentissa",
+    "search-clear-button-title": "Tyhjennä",
+    "search-detached-cancel-button-title": "Peruuta",
+    "search-submit-button-title": "Lähetä"
   }
 }</script>
+<script>
 
+  window.document.addEventListener("DOMContentLoaded", function (_event) {
+    const listingTargetEl = window.document.querySelector('#listing-listing .list');
+    if (!listingTargetEl) {
+      // No listing discovered, do not attach.
+      return; 
+    }
+
+    const options = {
+      valueNames: ['listing-date','listing-title','listing-author','listing-image','listing-description','listing-categories',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
+      
+      searchColumns: ["listing-date","listing-title","listing-author","listing-image","listing-description","listing-categories"],
+    };
+
+    window['quarto-listings'] = window['quarto-listings'] || {};
+    window['quarto-listings']['listing-listing'] = new List('listing-listing', options);
+
+    if (window['quarto-listing-loaded']) {
+      window['quarto-listing-loaded']();
+    }
+  });
+
+  window.addEventListener('hashchange',() => {
+    if (window['quarto-listing-loaded']) {
+      window['quarto-listing-loaded']();
+    }
+  })
+  </script>
+
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
 <link rel="stylesheet" href="styles.css">
 </head>
 
-<body class="nav-fixed fullcontent">
+<body class="nav-fixed">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -80,7 +122,11 @@ ul.task-list li input[type="checkbox"] {
   </li>  
   <li class="nav-item">
     <a class="nav-link active" href="./blogi.html" aria-current="page">
- <span class="menu-text">Blogitekstit</span></a>
+ <span class="menu-text">Blogi</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./hinnasto.html">
+ <span class="menu-text">Hinnasto</span></a>
   </li>  
   <li class="nav-item">
     <a class="nav-link" href="./ajanvaraus.html">
@@ -97,6 +143,7 @@ ul.task-list li input[type="checkbox"] {
  <span class="menu-text"></span></a>
   </li>  
 </ul>
+              <div id="quarto-search" class="" title="Search"></div>
           </div> <!-- /navcollapse -->
       </div> <!-- /container-fluid -->
     </nav>
@@ -105,13 +152,14 @@ ul.task-list li input[type="checkbox"] {
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+    <h5 class="quarto-listing-category-title">Luokat</h5><div class="quarto-listing-category category-default"><div class="category" data-category="">Kaikki <span class="quarto-category-count">(12)</span></div><div class="category" data-category="alkulämmittely">alkulämmittely <span class="quarto-category-count">(1)</span></div><div class="category" data-category="core">core <span class="quarto-category-count">(1)</span></div><div class="category" data-category="faskia">faskia <span class="quarto-category-count">(2)</span></div><div class="category" data-category="hartiakipu">hartiakipu <span class="quarto-category-count">(1)</span></div><div class="category" data-category="hengitys">hengitys <span class="quarto-category-count">(1)</span></div><div class="category" data-category="hengitysharjoitus">hengitysharjoitus <span class="quarto-category-count">(1)</span></div><div class="category" data-category="ikääntyminen">ikääntyminen <span class="quarto-category-count">(4)</span></div><div class="category" data-category="joustavuus">joustavuus <span class="quarto-category-count">(1)</span></div><div class="category" data-category="kehonhallinta">kehonhallinta <span class="quarto-category-count">(1)</span></div><div class="category" data-category="kehonhuolto">kehonhuolto <span class="quarto-category-count">(1)</span></div><div class="category" data-category="kestävyyskunto">kestävyyskunto <span class="quarto-category-count">(1)</span></div><div class="category" data-category="kestävyysliikunta">kestävyysliikunta <span class="quarto-category-count">(1)</span></div><div class="category" data-category="kuntosali">kuntosali <span class="quarto-category-count">(2)</span></div><div class="category" data-category="lantionpohja">lantionpohja <span class="quarto-category-count">(3)</span></div><div class="category" data-category="lantionpohjan fysioterapia">lantionpohjan fysioterapia <span class="quarto-category-count">(2)</span></div><div class="category" data-category="lantionpohjan kipu">lantionpohjan kipu <span class="quarto-category-count">(1)</span></div><div class="category" data-category="lantionpohjan toimintahäiriö">lantionpohjan toimintahäiriö <span class="quarto-category-count">(2)</span></div><div class="category" data-category="lihakset">lihakset <span class="quarto-category-count">(1)</span></div><div class="category" data-category="lihaskalvot">lihaskalvot <span class="quarto-category-count">(1)</span></div><div class="category" data-category="lihasvoima">lihasvoima <span class="quarto-category-count">(2)</span></div><div class="category" data-category="liikkuvuus">liikkuvuus <span class="quarto-category-count">(3)</span></div><div class="category" data-category="liikkuvuusharjoittelu">liikkuvuusharjoittelu <span class="quarto-category-count">(1)</span></div><div class="category" data-category="liikunta">liikunta <span class="quarto-category-count">(4)</span></div><div class="category" data-category="niska-hartiajännitys">niska-hartiajännitys <span class="quarto-category-count">(1)</span></div><div class="category" data-category="pilates">pilates <span class="quarto-category-count">(2)</span></div><div class="category" data-category="putkirullaus">putkirullaus <span class="quarto-category-count">(1)</span></div><div class="category" data-category="ryhti">ryhti <span class="quarto-category-count">(1)</span></div><div class="category" data-category="selkä">selkä <span class="quarto-category-count">(1)</span></div><div class="category" data-category="selkäkipu">selkäkipu <span class="quarto-category-count">(2)</span></div><div class="category" data-category="tasapaino">tasapaino <span class="quarto-category-count">(1)</span></div><div class="category" data-category="toimintakyky">toimintakyky <span class="quarto-category-count">(1)</span></div><div class="category" data-category="vatsalihakset">vatsalihakset <span class="quarto-category-count">(1)</span></div><div class="category" data-category="venyttely">venyttely <span class="quarto-category-count">(2)</span></div><div class="category" data-category="voimaharjoittelu">voimaharjoittelu <span class="quarto-category-count">(2)</span></div><div class="category" data-category="vulvodynia">vulvodynia <span class="quarto-category-count">(1)</span></div></div></div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Blogitekstit</h1>
+<h1 class="title">Blogi</h1>
 </div>
 
 
@@ -126,18 +174,563 @@ ul.task-list li input[type="checkbox"] {
 
 </header>
 
-<p><img src="b.jpg" class="img-fluid" width="300"></p>
-<p><a href="https://www.medisport.fi/ikaantyneiden-liikunta-osa-4">Ikääntyneiden liikunta, osa 4/4 - TASAPAINO</a></p>
-<p><a href="https://www.medisport.fi/ikaantyneiden-liikunta-osa-3">Ikääntyneiden liikunta, osa 3/4 - LIIKKUVUUS</a></p>
-<p><a href="https://www.medisport.fi/ikaantyneiden-liikunta-osa-2">Ikääntyneiden liikunta, osa 2/4 - KESTÄVYYSKUNTO</a></p>
-<p><a href="https://www.medisport.fi/ikaantyneiden-liikunta-osa-1">Ikääntyneiden liikunta, osa 1/4 - LIHASVOIMA</a></p>
-<p><a href="https://www.medisport.fi/hengitys-vaikuttaa-selkaekipuun">Hengitys vaikuttaa selkäkipuun</a></p>
-<p><a href="https://www.medisport.fi/putkirullaus-eli-foam-rolling">Putkirullaus eli Foam Rolling</a></p>
-<p><a href="https://www.medisport.fi/pilates-vahva-elastinen-ja-tasapainoinen-keho">PILATES - Vahva, elastinen ja tasapainoinen keho</a></p>
 
 
 
-</main> <!-- /main -->
+
+<div class="quarto-listing quarto-listing-container-default" id="listing-listing">
+<div class="list quarto-listing-default">
+<div class="quarto-post image-right" data-index="0" data-categories="selkä,selkäkipu,kuntosali,voimaharjoittelu" data-listing-date-sort="1678510800000" data-listing-file-modified-sort="1678837730683" data-listing-reading-time-sort="1.115">
+<div class="thumbnail">
+<p><a href="./posts/selka/index.html"> <img src="./posts/selka/selka.jpg" class="thumnail-image"> </a></p>
+</div>
+<div class="body">
+<a href="./posts/selka/index.html">
+<h3 class="no-anchor listing-title">
+Selkä saa ja pitää kuormittaa
+</h3>
+<div class="listing-subtitle">
+
+</div>
+</a>
+<div class="listing-categories">
+<div class="listing-category" onclick="window.quartoListingCategory('selkä'); return false;">
+selkä
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('selkäkipu'); return false;">
+selkäkipu
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('kuntosali'); return false;">
+kuntosali
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('voimaharjoittelu'); return false;">
+voimaharjoittelu
+</div>
+</div>
+<a href="./posts/selka/index.html">
+<div class="listing-description">
+<p>Pyöreän selän kuormittamista on demonisoitu jo aivan riittävän kauan!</p>
+</div>
+</a>
+</div>
+<div class="metadata">
+<a href="./posts/selka/index.html">
+<div class="listing-date">
+2023-03-11
+</div>
+<div class="listing-author">
+Fysioterapeutti Eeva-Maria Halminen
+</div>
+</a>
+</div>
+</div>
+<div class="quarto-post image-right" data-index="1" data-categories="joustavuus,faskia,venyttely" data-listing-date-sort="1677906000000" data-listing-file-modified-sort="1678838008216" data-listing-reading-time-sort="0.795">
+<div class="thumbnail">
+<p><a href="./posts/kiskottelu/index.html"> <img src="./posts/kiskottelu/kiskottelu.jpg" class="thumnail-image"> </a></p>
+</div>
+<div class="body">
+<a href="./posts/kiskottelu/index.html">
+<h3 class="no-anchor listing-title">
+Yksinkertaisin tapa huolehtia kehon joustavuudesta
+</h3>
+<div class="listing-subtitle">
+
+</div>
+</a>
+<div class="listing-categories">
+<div class="listing-category" onclick="window.quartoListingCategory('joustavuus'); return false;">
+joustavuus
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('faskia'); return false;">
+faskia
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('venyttely'); return false;">
+venyttely
+</div>
+</div>
+<a href="./posts/kiskottelu/index.html">
+<div class="listing-description">
+<p>Kiskottelu eli pandikulaatio on yksinkertaisin tapa huolehtia kehon joustavuudesta</p>
+</div>
+</a>
+</div>
+<div class="metadata">
+<a href="./posts/kiskottelu/index.html">
+<div class="listing-date">
+2023-03-04
+</div>
+<div class="listing-author">
+Fysioterapeutti Eeva-Maria Halminen
+</div>
+</a>
+</div>
+</div>
+<div class="quarto-post image-right" data-index="2" data-categories="liikkuvuusharjoittelu,liikkuvuus,toimintakyky" data-listing-date-sort="1677387600000" data-listing-file-modified-sort="1678837708077" data-listing-reading-time-sort="1.015">
+<div class="thumbnail">
+<p><a href="./posts/liikkuvuus/index.html"> <img src="./posts/liikkuvuus/liikkuvuus.jpg" class="thumnail-image"> </a></p>
+</div>
+<div class="body">
+<a href="./posts/liikkuvuus/index.html">
+<h3 class="no-anchor listing-title">
+Miksi liikkuvuudesta pitäisi pitää huolta
+</h3>
+<div class="listing-subtitle">
+
+</div>
+</a>
+<div class="listing-categories">
+<div class="listing-category" onclick="window.quartoListingCategory('liikkuvuusharjoittelu'); return false;">
+liikkuvuusharjoittelu
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('liikkuvuus'); return false;">
+liikkuvuus
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('toimintakyky'); return false;">
+toimintakyky
+</div>
+</div>
+<a href="./posts/liikkuvuus/index.html">
+<div class="listing-description">
+<p>Liikkuvuus on sitä kuinka kehosi taipuu eri asioihin</p>
+</div>
+</a>
+</div>
+<div class="metadata">
+<a href="./posts/liikkuvuus/index.html">
+<div class="listing-date">
+2023-02-26
+</div>
+<div class="listing-author">
+Fysioterapeutti Eeva-Maria Halminen
+</div>
+</a>
+</div>
+</div>
+<div class="quarto-post image-right" data-index="3" data-categories="lantionpohja,lantionpohjan toimintahäiriö,lantionpohjan fysioterapia" data-listing-date-sort="1676091600000" data-listing-file-modified-sort="1678838074945" data-listing-reading-time-sort="0.77">
+<div class="thumbnail">
+<p><a href="./posts/lantionpohja/index.html"> <img src="./posts/lantionpohja/lantionpohja.jpg" class="thumnail-image"> </a></p>
+</div>
+<div class="body">
+<a href="./posts/lantionpohja/index.html">
+<h3 class="no-anchor listing-title">
+Lantionpohjan toimintahäiriöt
+</h3>
+<div class="listing-subtitle">
+
+</div>
+</a>
+<div class="listing-categories">
+<div class="listing-category" onclick="window.quartoListingCategory('lantionpohja'); return false;">
+lantionpohja
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('lantionpohjan toimintahäiriö'); return false;">
+lantionpohjan toimintahäiriö
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('lantionpohjan fysioterapia'); return false;">
+lantionpohjan fysioterapia
+</div>
+</div>
+<a href="./posts/lantionpohja/index.html">
+<div class="listing-description">
+<p>Lantionpohjan toimintahäiriö johtuu melko harvoin voiman puutteesta - syynä on yleisemmin kontrollin puute</p>
+</div>
+</a>
+</div>
+<div class="metadata">
+<a href="./posts/lantionpohja/index.html">
+<div class="listing-date">
+2023-02-11
+</div>
+<div class="listing-author">
+Fysioterapeutti Eeva-Maria Halminen
+</div>
+</a>
+</div>
+</div>
+<div class="quarto-post image-right" data-index="4" data-categories="vulvodynia,lantionpohja,lantionpohjan fysioterapia,lantionpohjan toimintahäiriö,lantionpohjan kipu" data-listing-date-sort="1668056400000" data-listing-file-modified-sort="1678838177411" data-listing-reading-time-sort="6.735">
+<div class="thumbnail">
+<p><a href="./posts/vulvodynia/index.html"> <img src="./posts/vulvodynia/vulvodynia-1.jpg" class="thumnail-image"> </a></p>
+</div>
+<div class="body">
+<a href="./posts/vulvodynia/index.html">
+<h3 class="no-anchor listing-title">
+Vulvodyniaan on olemassa hoitovaihtoehtoja
+</h3>
+<div class="listing-subtitle">
+
+</div>
+</a>
+<div class="listing-categories">
+<div class="listing-category" onclick="window.quartoListingCategory('vulvodynia'); return false;">
+vulvodynia
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('lantionpohja'); return false;">
+lantionpohja
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('lantionpohjan fysioterapia'); return false;">
+lantionpohjan fysioterapia
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('lantionpohjan toimintahäiriö'); return false;">
+lantionpohjan toimintahäiriö
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('lantionpohjan kipu'); return false;">
+lantionpohjan kipu
+</div>
+</div>
+<a href="./posts/vulvodynia/index.html">
+<div class="listing-description">
+<p>Vulvodynian hoidossa paras hoitovaste saavutetaan moniammatillisella yhteistyöllä</p>
+</div>
+</a>
+</div>
+<div class="metadata">
+<a href="./posts/vulvodynia/index.html">
+<div class="listing-date">
+2022-11-10
+</div>
+<div class="listing-author">
+Fysioterapeutti Eeva-Maria Halminen
+</div>
+</a>
+</div>
+</div>
+<div class="quarto-post image-right" data-index="5" data-categories="ikääntyminen,liikunta,tasapaino" data-listing-date-sort="1660795200000" data-listing-file-modified-sort="1678838347535" data-listing-reading-time-sort="1.89">
+<div class="thumbnail">
+<p><a href="./posts/ikaantyneiden-liikunta-osa-4/index.html"> <img src="./posts/ikaantyneiden-liikunta-osa-4/pixabay.webp" class="thumnail-image"> </a></p>
+</div>
+<div class="body">
+<a href="./posts/ikaantyneiden-liikunta-osa-4/index.html">
+<h3 class="no-anchor listing-title">
+Ikääntyneiden liikunta, osa 4/4 TASAPAINO
+</h3>
+<div class="listing-subtitle">
+
+</div>
+</a>
+<div class="listing-categories">
+<div class="listing-category" onclick="window.quartoListingCategory('ikääntyminen'); return false;">
+ikääntyminen
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('liikunta'); return false;">
+liikunta
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('tasapaino'); return false;">
+tasapaino
+</div>
+</div>
+<a href="./posts/ikaantyneiden-liikunta-osa-4/index.html">
+<div class="listing-description">
+<p>Lihasvoimaa ja liikkuvuutta tarvitaan tasapainon säilyttämisessä</p>
+</div>
+</a>
+</div>
+<div class="metadata">
+<a href="./posts/ikaantyneiden-liikunta-osa-4/index.html">
+<div class="listing-date">
+2022-08-18
+</div>
+<div class="listing-author">
+Fysioterapeutti Eeva-Maria Halminen
+</div>
+</a>
+</div>
+</div>
+<div class="quarto-post image-right" data-index="6" data-categories="ikääntyminen,liikunta,liikkuvuus,venyttely" data-listing-date-sort="1660449600000" data-listing-file-modified-sort="1678838332331" data-listing-reading-time-sort="1.92">
+<div class="thumbnail">
+<p><a href="./posts/ikaantyneiden-liikunta-osa-3/index.html"> <img src="./posts/ikaantyneiden-liikunta-osa-3/venyttely.webp" class="thumnail-image"> </a></p>
+</div>
+<div class="body">
+<a href="./posts/ikaantyneiden-liikunta-osa-3/index.html">
+<h3 class="no-anchor listing-title">
+Ikääntyneiden liikunta, osa 3/4 LIIKKUVUUS
+</h3>
+<div class="listing-subtitle">
+
+</div>
+</a>
+<div class="listing-categories">
+<div class="listing-category" onclick="window.quartoListingCategory('ikääntyminen'); return false;">
+ikääntyminen
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('liikunta'); return false;">
+liikunta
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('liikkuvuus'); return false;">
+liikkuvuus
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('venyttely'); return false;">
+venyttely
+</div>
+</div>
+<a href="./posts/ikaantyneiden-liikunta-osa-3/index.html">
+<div class="listing-description">
+<p>Riittävä liikkuvuus nivelissä helpottaa yksinkertaisia arjen toimintoja</p>
+</div>
+</a>
+</div>
+<div class="metadata">
+<a href="./posts/ikaantyneiden-liikunta-osa-3/index.html">
+<div class="listing-date">
+2022-08-14
+</div>
+<div class="listing-author">
+Fysioterapeutti Eeva-Maria Halminen
+</div>
+</a>
+</div>
+</div>
+<div class="quarto-post image-right" data-index="7" data-categories="ikääntyminen,liikunta,lihasvoima,kestävyysliikunta,kestävyyskunto" data-listing-date-sort="1659844800000" data-listing-file-modified-sort="1678838316727" data-listing-reading-time-sort="2.43">
+<div class="thumbnail">
+<p><a href="./posts/ikaantyneiden-liikunta-osa-2/index.html"> <img src="./posts/ikaantyneiden-liikunta-osa-2/pyora.jpg" class="thumnail-image"> </a></p>
+</div>
+<div class="body">
+<a href="./posts/ikaantyneiden-liikunta-osa-2/index.html">
+<h3 class="no-anchor listing-title">
+Ikääntyneiden liikunta, osa 2/4 KESTÄVYYSKUNTO
+</h3>
+<div class="listing-subtitle">
+
+</div>
+</a>
+<div class="listing-categories">
+<div class="listing-category" onclick="window.quartoListingCategory('ikääntyminen'); return false;">
+ikääntyminen
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('liikunta'); return false;">
+liikunta
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('lihasvoima'); return false;">
+lihasvoima
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('kestävyysliikunta'); return false;">
+kestävyysliikunta
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('kestävyyskunto'); return false;">
+kestävyyskunto
+</div>
+</div>
+<a href="./posts/ikaantyneiden-liikunta-osa-2/index.html">
+<div class="listing-description">
+<p>Sydämen työmäärä vähenee kestävyyskunnon kohentuessa</p>
+</div>
+</a>
+</div>
+<div class="metadata">
+<a href="./posts/ikaantyneiden-liikunta-osa-2/index.html">
+<div class="listing-date">
+2022-08-07
+</div>
+<div class="listing-author">
+Fysioterapeutti Eeva-Maria Halminen
+</div>
+</a>
+</div>
+</div>
+<div class="quarto-post image-right" data-index="8" data-categories="ikääntyminen,liikunta,lihasvoima,voimaharjoittelu,kuntosali" data-listing-date-sort="1659499200000" data-listing-file-modified-sort="1678838359982" data-listing-reading-time-sort="3.43">
+<div class="thumbnail">
+<p><a href="./posts/ikaantyneiden-liikunta-osa-1/index.html"> <img src="./posts/ikaantyneiden-liikunta-osa-1/nojatuoli.jpg" class="thumnail-image"> </a></p>
+</div>
+<div class="body">
+<a href="./posts/ikaantyneiden-liikunta-osa-1/index.html">
+<h3 class="no-anchor listing-title">
+Ikääntyneiden liikunta, osa 1/4 LIHASVOIMA
+</h3>
+<div class="listing-subtitle">
+
+</div>
+</a>
+<div class="listing-categories">
+<div class="listing-category" onclick="window.quartoListingCategory('ikääntyminen'); return false;">
+ikääntyminen
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('liikunta'); return false;">
+liikunta
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('lihasvoima'); return false;">
+lihasvoima
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('voimaharjoittelu'); return false;">
+voimaharjoittelu
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('kuntosali'); return false;">
+kuntosali
+</div>
+</div>
+<a href="./posts/ikaantyneiden-liikunta-osa-1/index.html">
+<div class="listing-description">
+<p>Lihasvoima mahdollistaa toimintakyvyn</p>
+</div>
+</a>
+</div>
+<div class="metadata">
+<a href="./posts/ikaantyneiden-liikunta-osa-1/index.html">
+<div class="listing-date">
+2022-08-03
+</div>
+<div class="listing-author">
+Fysioterapeutti Eeva-Maria Halminen
+</div>
+</a>
+</div>
+</div>
+<div class="quarto-post image-right" data-index="9" data-categories="hengitys,hengitysharjoitus,selkäkipu,hartiakipu,niska-hartiajännitys,pilates" data-listing-date-sort="1602820800000" data-listing-file-modified-sort="1678838302023" data-listing-reading-time-sort="3.885">
+<div class="thumbnail">
+<p><a href="./posts/hengitys/index.html"> <img src="./posts/hengitys/hengitys.webp" class="thumnail-image"> </a></p>
+</div>
+<div class="body">
+<a href="./posts/hengitys/index.html">
+<h3 class="no-anchor listing-title">
+Hengitys vaikuttaa selkäkipuun
+</h3>
+<div class="listing-subtitle">
+
+</div>
+</a>
+<div class="listing-categories">
+<div class="listing-category" onclick="window.quartoListingCategory('hengitys'); return false;">
+hengitys
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('hengitysharjoitus'); return false;">
+hengitysharjoitus
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('selkäkipu'); return false;">
+selkäkipu
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('hartiakipu'); return false;">
+hartiakipu
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('niska-hartiajännitys'); return false;">
+niska-hartiajännitys
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('pilates'); return false;">
+pilates
+</div>
+</div>
+<a href="./posts/hengitys/index.html">
+<div class="listing-description">
+<p>Hengitysharjoitukset ovat tehokkaita harjoituksia alaselkäkivun hoidossa ja ennaltaehkäisyssä</p>
+</div>
+</a>
+</div>
+<div class="metadata">
+<a href="./posts/hengitys/index.html">
+<div class="listing-date">
+2020-10-16
+</div>
+<div class="listing-author">
+Fysioterapeutti Eeva-Maria Halminen
+</div>
+</a>
+</div>
+</div>
+<div class="quarto-post image-right" data-index="10" data-categories="putkirullaus,lihaskalvot,lihakset,faskia,kehonhuolto,alkulämmittely" data-listing-date-sort="1594785600000" data-listing-file-modified-sort="1678837795787" data-listing-reading-time-sort="2.285">
+<div class="thumbnail">
+<p><a href="./posts/putkirullaus/index.html"> <img src="./posts/putkirullaus/rullaus.webp" class="thumnail-image"> </a></p>
+</div>
+<div class="body">
+<a href="./posts/putkirullaus/index.html">
+<h3 class="no-anchor listing-title">
+Putkirullaus eli Foam Rolling
+</h3>
+<div class="listing-subtitle">
+
+</div>
+</a>
+<div class="listing-categories">
+<div class="listing-category" onclick="window.quartoListingCategory('putkirullaus'); return false;">
+putkirullaus
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('lihaskalvot'); return false;">
+lihaskalvot
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('lihakset'); return false;">
+lihakset
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('faskia'); return false;">
+faskia
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('kehonhuolto'); return false;">
+kehonhuolto
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('alkulämmittely'); return false;">
+alkulämmittely
+</div>
+</div>
+<a href="./posts/putkirullaus/index.html">
+<div class="listing-description">
+<p>Putkirullaus virkistää lihaksia</p>
+</div>
+</a>
+</div>
+<div class="metadata">
+<a href="./posts/putkirullaus/index.html">
+<div class="listing-date">
+2020-07-15
+</div>
+<div class="listing-author">
+Fysioterapeutti Eeva-Maria Halminen
+</div>
+</a>
+</div>
+</div>
+<div class="quarto-post image-right" data-index="11" data-categories="pilates,kehonhallinta,lantionpohja,vatsalihakset,core,ryhti,liikkuvuus" data-listing-date-sort="1585886400000" data-listing-file-modified-sort="1678837902643" data-listing-reading-time-sort="1.84">
+<div class="thumbnail">
+<p><a href="./posts/pilates/index.html"> <img src="./posts/pilates/pilates.webp" class="thumnail-image"> </a></p>
+</div>
+<div class="body">
+<a href="./posts/pilates/index.html">
+<h3 class="no-anchor listing-title">
+PILATES - Vahva, elastinen ja tasapainoinen keho
+</h3>
+<div class="listing-subtitle">
+
+</div>
+</a>
+<div class="listing-categories">
+<div class="listing-category" onclick="window.quartoListingCategory('pilates'); return false;">
+pilates
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('kehonhallinta'); return false;">
+kehonhallinta
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('lantionpohja'); return false;">
+lantionpohja
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('vatsalihakset'); return false;">
+vatsalihakset
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('core'); return false;">
+core
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('ryhti'); return false;">
+ryhti
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('liikkuvuus'); return false;">
+liikkuvuus
+</div>
+</div>
+<a href="./posts/pilates/index.html">
+<div class="listing-description">
+<p>Pilatesharjoittelu parantaa kehonhallintaa</p>
+</div>
+</a>
+</div>
+<div class="metadata">
+<a href="./posts/pilates/index.html">
+<div class="listing-date">
+2020-04-03
+</div>
+<div class="listing-author">
+Fysioterapeutti Eeva-Maria Halminen
+</div>
+</a>
+</div>
+</div>
+</div>
+<div class="listing-no-matching d-none">
+Ei hakutuloksia
+</div>
+</div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
@@ -178,12 +771,12 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     // flash "checked"
     button.classList.add('code-copy-button-checked');
     var currentTitle = button.getAttribute("title");
-    button.setAttribute("title", "Copied!");
+    button.setAttribute("title", "Kopioitu!");
     let tooltip;
     if (window.bootstrap) {
       button.setAttribute("data-bs-toggle", "tooltip");
       button.setAttribute("data-bs-placement", "left");
-      button.setAttribute("data-bs-title", "Copied!");
+      button.setAttribute("data-bs-title", "Kopioitu!");
       tooltip = new bootstrap.Tooltip(button, 
         { trigger: "manual", 
           customClass: "code-copy-button-tooltip",

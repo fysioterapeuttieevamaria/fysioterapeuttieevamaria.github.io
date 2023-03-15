@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="fi" xml:lang="fi"><head>
 
 <meta charset="utf-8">
 <meta name="generator" content="quarto-1.2.269">
@@ -25,8 +25,12 @@ ul.task-list li input[type="checkbox"] {
 
 <script src="site_libs/quarto-nav/quarto-nav.js"></script>
 <script src="site_libs/quarto-nav/headroom.min.js"></script>
-<link href="./favicon.ico" rel="icon">
 <script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<link href="./favicon.ico" rel="icon">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -37,16 +41,22 @@ ul.task-list li input[type="checkbox"] {
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 20,
   "language": {
-    "search-no-results-text": "No results",
-    "search-matching-documents-text": "matching documents",
-    "search-copy-link-title": "Copy link to search",
-    "search-hide-matches-text": "Hide additional matches",
-    "search-more-match-text": "more match in this document",
-    "search-more-matches-text": "more matches in this document",
-    "search-clear-button-title": "Clear",
-    "search-detached-cancel-button-title": "Cancel",
-    "search-submit-button-title": "Submit"
+    "search-no-results-text": "Ei tuloksia",
+    "search-matching-documents-text": "tulokset",
+    "search-copy-link-title": "Kopioi linkki hakuun",
+    "search-hide-matches-text": "Piilota loput tulokset",
+    "search-more-match-text": "tulos tässä dokumentissa",
+    "search-more-matches-text": "tulosta tässä dokumentissa",
+    "search-clear-button-title": "Tyhjennä",
+    "search-detached-cancel-button-title": "Peruuta",
+    "search-submit-button-title": "Lähetä"
   }
 }</script>
 
@@ -80,7 +90,11 @@ ul.task-list li input[type="checkbox"] {
   </li>  
   <li class="nav-item">
     <a class="nav-link" href="./blogi.html">
- <span class="menu-text">Blogitekstit</span></a>
+ <span class="menu-text">Blogi</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./hinnasto.html">
+ <span class="menu-text">Hinnasto</span></a>
   </li>  
   <li class="nav-item">
     <a class="nav-link active" href="./ajanvaraus.html" aria-current="page">
@@ -97,6 +111,7 @@ ul.task-list li input[type="checkbox"] {
  <span class="menu-text"></span></a>
   </li>  
 </ul>
+              <div id="quarto-search" class="" title="Search"></div>
           </div> <!-- /navcollapse -->
       </div> <!-- /container-fluid -->
     </nav>
@@ -126,12 +141,18 @@ ul.task-list li input[type="checkbox"] {
 
 </header>
 
+<section id="ja-yhteydenotto" class="level1">
+<h1>ja yhteydenotto</h1>
 <p><img src="a.jpg" class="img-fluid"></p>
-<section id="ajanvaraus-fysioterapian-etävastaanottoon" class="level2">
-<h2 class="anchored" data-anchor-id="ajanvaraus-fysioterapian-etävastaanottoon">Ajanvaraus fysioterapian etävastaanottoon</h2>
-<p><a href="https://www.medisport.fi/eeva-maria-halminen">Medisport, Kaukajärven lääkärikeskus, Tampere</a>: Soita <a href="tel:+358%203%20314%2038100">03 314 38100</a> tai lähetä sähköpostia: <a href="mailto:fysioterapeutti.eevamaria@gmail.com">fysioterapeutti.eevamaria@gmail.com</a>.</p>
+<section id="ajanvaraus-fysioterapian-etävastaanottoon" class="level3">
+<h3 class="anchored" data-anchor-id="ajanvaraus-fysioterapian-etävastaanottoon">Ajanvaraus fysioterapian etävastaanottoon</h3>
+<p><a href="https://www.medisport.fi/eeva-maria-halminen">Medisport, Kaukajärven lääkärikeskus, Tampere</a></p>
+<p>Soita Medisportin ajanvaraukseen: <a href="tel:+358%203%20314%2038100">03 314 38100</a></p>
+<p>Lähetä sähköpostia: <a href="mailto:fysioterapeutti.eevamaria@gmail.com">fysioterapeutti.eevamaria@gmail.com</a></p>
+<p>Ota yhteyttä: <a href="https://www.instagram.com/fysioterapeuttieevamaria">Instagram</a> / <a href="https://www.facebook.com/Fysioterapeuttieevamaria">Facebook</a></p>
 
 
+</section>
 </section>
 
 </main> <!-- /main -->
@@ -175,12 +196,12 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     // flash "checked"
     button.classList.add('code-copy-button-checked');
     var currentTitle = button.getAttribute("title");
-    button.setAttribute("title", "Copied!");
+    button.setAttribute("title", "Kopioitu!");
     let tooltip;
     if (window.bootstrap) {
       button.setAttribute("data-bs-toggle", "tooltip");
       button.setAttribute("data-bs-placement", "left");
-      button.setAttribute("data-bs-title", "Copied!");
+      button.setAttribute("data-bs-title", "Kopioitu!");
       tooltip = new bootstrap.Tooltip(button, 
         { trigger: "manual", 
           customClass: "code-copy-button-tooltip",

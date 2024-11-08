@@ -2,12 +2,12 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="fi" xml:lang="fi"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.3.450">
+<meta name="generator" content="quarto-1.5.57">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>eevamaria.fi - Blogi</title>
+<title>Blogi – eevamaria.fi</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -48,7 +48,13 @@ ul.task-list li input[type="checkbox"] {
   "collapse-after": 3,
   "panel-placement": "end",
   "type": "overlay",
-  "limit": 20,
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
   "language": {
     "search-no-results-text": "Ei tuloksia",
     "search-matching-documents-text": "tulokset",
@@ -57,6 +63,7 @@ ul.task-list li input[type="checkbox"] {
     "search-more-match-text": "tulos tässä dokumentissa",
     "search-more-matches-text": "tulosta tässä dokumentissa",
     "search-clear-button-title": "Tyhjennä",
+    "search-text-placeholder": "",
     "search-detached-cancel-button-title": "Peruuta",
     "search-submit-button-title": "Lähetä",
     "search-label": "Hae"
@@ -92,8 +99,35 @@ ul.task-list li input[type="checkbox"] {
   })
   </script>
 
-  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
   <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 <link rel="stylesheet" href="styles.css">
 </head>
@@ -102,57 +136,61 @@ ul.task-list li input[type="checkbox"] {
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
-    <nav class="navbar navbar-expand-lg navbar-dark ">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
-      <div class="navbar-brand-container">
+      <div class="navbar-brand-container mx-auto">
     <a class="navbar-brand" href="./index.html">
     <span class="navbar-title">eevamaria.fi</span>
     </a>
   </div>
             <div id="quarto-search" class="" title="Hae"></div>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Vaihda navigointi" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Vaihda navigointi" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
   <span class="navbar-toggler-icon"></span>
 </button>
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item">
-    <a class="nav-link" href="./index.html" rel="" target="">
- <span class="menu-text">Etusivu</span></a>
+    <a class="nav-link" href="./index.html"> 
+<span class="menu-text">Etusivu</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./palvelut.html" rel="" target="">
- <span class="menu-text">Palvelut</span></a>
+    <a class="nav-link" href="./palvelut.html"> 
+<span class="menu-text">Palvelut</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./hinnasto.html" rel="" target="">
- <span class="menu-text">Hinnasto</span></a>
+    <a class="nav-link" href="./pienryhmat.html"> 
+<span class="menu-text">Pienryhmät</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./ajanvaraus.html" rel="" target="">
- <span class="menu-text">Ajanvaraus</span></a>
+    <a class="nav-link" href="./hinnasto.html"> 
+<span class="menu-text">Hinnasto</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link active" href="./blogi.html" rel="" target="" aria-current="page">
- <span class="menu-text">Blogi</span></a>
+    <a class="nav-link" href="./ajanvaraus.html"> 
+<span class="menu-text">Ajanvaraus</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./cv.html" rel="" target="">
- <span class="menu-text">CV</span></a>
+    <a class="nav-link active" href="./blogi.html" aria-current="page"> 
+<span class="menu-text">Blogi</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./cv.html"> 
+<span class="menu-text">CV</span></a>
   </li>  
   <li class="nav-item compact">
-    <a class="nav-link" href="https://www.instagram.com/fysioterapeuttieevamaria" rel="" target=""><i class="bi bi-instagram" role="img">
+    <a class="nav-link" href="https://www.instagram.com/fysioterapeuttieevamaria"> <i class="bi bi-instagram" role="img">
 </i> 
- <span class="menu-text"></span></a>
+<span class="menu-text"></span></a>
   </li>  
   <li class="nav-item compact">
-    <a class="nav-link" href="https://www.facebook.com/Fysioterapeuttieevamaria" rel="" target=""><i class="bi bi-facebook" role="img">
+    <a class="nav-link" href="https://www.facebook.com/Fysioterapeuttieevamaria"> <i class="bi bi-facebook" role="img">
 </i> 
- <span class="menu-text"></span></a>
+<span class="menu-text"></span></a>
   </li>  
 </ul>
+          </div> <!-- /navcollapse -->
             <div class="quarto-navbar-tools">
 </div>
-          </div> <!-- /navcollapse -->
       </div> <!-- /container-fluid -->
     </nav>
 </header>
@@ -180,7 +218,9 @@ ul.task-list li input[type="checkbox"] {
   </div>
   
 
+
 </header>
+
 
 
 
@@ -188,19 +228,19 @@ ul.task-list li input[type="checkbox"] {
 
 <div class="quarto-listing quarto-listing-container-default" id="listing-listing">
 <div class="list quarto-listing-default">
-<div class="quarto-post image-right" data-index="0" data-categories="selkä,selkäkipu,kuntosali,voimaharjoittelu" data-listing-date-sort="1678485600000" data-listing-file-modified-sort="1678840503761" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2">
+<div class="quarto-post image-right" data-index="0" data-categories="selkä,selkäkipu,kuntosali,voimaharjoittelu" data-listing-date-sort="1678485600000" data-listing-file-modified-sort="1678840503761" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="223">
 <div class="thumbnail">
-<p><a href="./posts/selka/index.html"> <img src="./posts/selka/selka.jpg" class="thumbnail-image"> </a></p>
+<p><a href="./posts/selka/index.html" class="no-external"></a></p><a href="./posts/selka/index.html" class="no-external">
+<p><img loading="lazy" src="./posts/selka/selka.jpg" class="thumbnail-image"></p>
+</a><p><a href="./posts/selka/index.html" class="no-external"></a></p>
 </div>
 <div class="body">
-<a href="./posts/selka/index.html">
 <h3 class="no-anchor listing-title">
-Pyöreää selkää saa ja pitää kuormittaa
+<a href="./posts/selka/index.html" class="no-external">Pyöreää selkää saa ja pitää kuormittaa</a>
 </h3>
 <div class="listing-subtitle">
-
+<a href="./posts/selka/index.html" class="no-external"></a>
 </div>
-</a>
 <div class="listing-categories">
 <div class="listing-category" onclick="window.quartoListingCategory('selkä'); return false;">
 selkä
@@ -215,14 +255,12 @@ kuntosali
 voimaharjoittelu
 </div>
 </div>
-<a href="./posts/selka/index.html">
 <div class="listing-description">
-<p>Pyöreän selän kuormittamista on demonisoitu jo aivan riittävän kauan!</p>
+<a href="./posts/selka/index.html" class="no-external">Pyöreän selän kuormittamista on demonisoitu jo aivan riittävän kauan!</a>
 </div>
-</a>
 </div>
 <div class="metadata">
-<a href="./posts/selka/index.html">
+<a href="./posts/selka/index.html" class="no-external">
 <div class="listing-date">
 2023-03-11
 </div>
@@ -232,19 +270,19 @@ Fysioterapeutti Eeva-Maria Halminen
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="1" data-categories="joustavuus,faskia,venyttely" data-listing-date-sort="1677880800000" data-listing-file-modified-sort="1678838008216" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1">
+<div class="quarto-post image-right" data-index="1" data-categories="joustavuus,faskia,venyttely" data-listing-date-sort="1677880800000" data-listing-file-modified-sort="1678838008216" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="159">
 <div class="thumbnail">
-<p><a href="./posts/kiskottelu/index.html"> <img src="./posts/kiskottelu/kiskottelu.jpg" class="thumbnail-image"> </a></p>
+<p><a href="./posts/kiskottelu/index.html" class="no-external"></a></p><a href="./posts/kiskottelu/index.html" class="no-external">
+<p><img loading="lazy" src="./posts/kiskottelu/kiskottelu.jpg" class="thumbnail-image"></p>
+</a><p><a href="./posts/kiskottelu/index.html" class="no-external"></a></p>
 </div>
 <div class="body">
-<a href="./posts/kiskottelu/index.html">
 <h3 class="no-anchor listing-title">
-Yksinkertaisin tapa huolehtia kehon joustavuudesta
+<a href="./posts/kiskottelu/index.html" class="no-external">Yksinkertaisin tapa huolehtia kehon joustavuudesta</a>
 </h3>
 <div class="listing-subtitle">
-
+<a href="./posts/kiskottelu/index.html" class="no-external"></a>
 </div>
-</a>
 <div class="listing-categories">
 <div class="listing-category" onclick="window.quartoListingCategory('joustavuus'); return false;">
 joustavuus
@@ -256,14 +294,12 @@ faskia
 venyttely
 </div>
 </div>
-<a href="./posts/kiskottelu/index.html">
 <div class="listing-description">
-<p>Kiskottelu eli pandikulaatio on yksinkertaisin tapa huolehtia kehon joustavuudesta</p>
+<a href="./posts/kiskottelu/index.html" class="no-external">Kiskottelu eli pandikulaatio on yksinkertaisin tapa huolehtia kehon joustavuudesta</a>
 </div>
-</a>
 </div>
 <div class="metadata">
-<a href="./posts/kiskottelu/index.html">
+<a href="./posts/kiskottelu/index.html" class="no-external">
 <div class="listing-date">
 2023-03-04
 </div>
@@ -273,19 +309,19 @@ Fysioterapeutti Eeva-Maria Halminen
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="2" data-categories="liikkuvuusharjoittelu,liikkuvuus,toimintakyky" data-listing-date-sort="1677362400000" data-listing-file-modified-sort="1678837708077" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2">
+<div class="quarto-post image-right" data-index="2" data-categories="liikkuvuusharjoittelu,liikkuvuus,toimintakyky" data-listing-date-sort="1677362400000" data-listing-file-modified-sort="1678837708077" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="203">
 <div class="thumbnail">
-<p><a href="./posts/liikkuvuus/index.html"> <img src="./posts/liikkuvuus/liikkuvuus.jpg" class="thumbnail-image"> </a></p>
+<p><a href="./posts/liikkuvuus/index.html" class="no-external"></a></p><a href="./posts/liikkuvuus/index.html" class="no-external">
+<p><img loading="lazy" src="./posts/liikkuvuus/liikkuvuus.jpg" class="thumbnail-image"></p>
+</a><p><a href="./posts/liikkuvuus/index.html" class="no-external"></a></p>
 </div>
 <div class="body">
-<a href="./posts/liikkuvuus/index.html">
 <h3 class="no-anchor listing-title">
-Miksi liikkuvuudesta pitäisi pitää huolta
+<a href="./posts/liikkuvuus/index.html" class="no-external">Miksi liikkuvuudesta pitäisi pitää huolta</a>
 </h3>
 <div class="listing-subtitle">
-
+<a href="./posts/liikkuvuus/index.html" class="no-external"></a>
 </div>
-</a>
 <div class="listing-categories">
 <div class="listing-category" onclick="window.quartoListingCategory('liikkuvuusharjoittelu'); return false;">
 liikkuvuusharjoittelu
@@ -297,14 +333,12 @@ liikkuvuus
 toimintakyky
 </div>
 </div>
-<a href="./posts/liikkuvuus/index.html">
 <div class="listing-description">
-<p>Liikkuvuus on sitä kuinka kehosi taipuu eri asioihin</p>
+<a href="./posts/liikkuvuus/index.html" class="no-external">Liikkuvuus on sitä kuinka kehosi taipuu eri asioihin</a>
 </div>
-</a>
 </div>
 <div class="metadata">
-<a href="./posts/liikkuvuus/index.html">
+<a href="./posts/liikkuvuus/index.html" class="no-external">
 <div class="listing-date">
 2023-02-26
 </div>
@@ -314,19 +348,19 @@ Fysioterapeutti Eeva-Maria Halminen
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="3" data-categories="lantionpohja,lantionpohjan toimintahäiriö,lantionpohjan fysioterapia" data-listing-date-sort="1676066400000" data-listing-file-modified-sort="1678838074945" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1">
+<div class="quarto-post image-right" data-index="3" data-categories="lantionpohja,lantionpohjan toimintahäiriö,lantionpohjan fysioterapia" data-listing-date-sort="1676066400000" data-listing-file-modified-sort="1678838074945" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="154">
 <div class="thumbnail">
-<p><a href="./posts/lantionpohja/index.html"> <img src="./posts/lantionpohja/lantionpohja.jpg" class="thumbnail-image"> </a></p>
+<p><a href="./posts/lantionpohja/index.html" class="no-external"></a></p><a href="./posts/lantionpohja/index.html" class="no-external">
+<p><img loading="lazy" src="./posts/lantionpohja/lantionpohja.jpg" class="thumbnail-image"></p>
+</a><p><a href="./posts/lantionpohja/index.html" class="no-external"></a></p>
 </div>
 <div class="body">
-<a href="./posts/lantionpohja/index.html">
 <h3 class="no-anchor listing-title">
-Lantionpohjan toimintahäiriöt
+<a href="./posts/lantionpohja/index.html" class="no-external">Lantionpohjan toimintahäiriöt</a>
 </h3>
 <div class="listing-subtitle">
-
+<a href="./posts/lantionpohja/index.html" class="no-external"></a>
 </div>
-</a>
 <div class="listing-categories">
 <div class="listing-category" onclick="window.quartoListingCategory('lantionpohja'); return false;">
 lantionpohja
@@ -338,14 +372,12 @@ lantionpohjan toimintahäiriö
 lantionpohjan fysioterapia
 </div>
 </div>
-<a href="./posts/lantionpohja/index.html">
 <div class="listing-description">
-<p>Lantionpohjan toimintahäiriö johtuu melko harvoin voiman puutteesta - syynä on yleisemmin kontrollin puute</p>
+<a href="./posts/lantionpohja/index.html" class="no-external">Lantionpohjan toimintahäiriö johtuu melko harvoin voiman puutteesta - syynä on yleisemmin kontrollin puute</a>
 </div>
-</a>
 </div>
 <div class="metadata">
-<a href="./posts/lantionpohja/index.html">
+<a href="./posts/lantionpohja/index.html" class="no-external">
 <div class="listing-date">
 2023-02-11
 </div>
@@ -355,19 +387,19 @@ Fysioterapeutti Eeva-Maria Halminen
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="4" data-categories="vulvodynia,lantionpohja,lantionpohjan fysioterapia,lantionpohjan toimintahäiriö,lantionpohjan kipu" data-listing-date-sort="1668031200000" data-listing-file-modified-sort="1678838177411" data-listing-date-modified-sort="1678658400000" data-listing-reading-time-sort="7">
+<div class="quarto-post image-right" data-index="4" data-categories="vulvodynia,lantionpohja,lantionpohjan fysioterapia,lantionpohjan toimintahäiriö,lantionpohjan kipu" data-listing-date-sort="1668031200000" data-listing-file-modified-sort="1678838177411" data-listing-date-modified-sort="1678658400000" data-listing-reading-time-sort="7" data-listing-word-count-sort="1347">
 <div class="thumbnail">
-<p><a href="./posts/vulvodynia/index.html"> <img src="./posts/vulvodynia/vulvodynia-1.jpg" class="thumbnail-image"> </a></p>
+<p><a href="./posts/vulvodynia/index.html" class="no-external"></a></p><a href="./posts/vulvodynia/index.html" class="no-external">
+<p><img loading="lazy" src="./posts/vulvodynia/vulvodynia-1.jpg" class="thumbnail-image"></p>
+</a><p><a href="./posts/vulvodynia/index.html" class="no-external"></a></p>
 </div>
 <div class="body">
-<a href="./posts/vulvodynia/index.html">
 <h3 class="no-anchor listing-title">
-Vulvodyniaan on olemassa hoitovaihtoehtoja
+<a href="./posts/vulvodynia/index.html" class="no-external">Vulvodyniaan on olemassa hoitovaihtoehtoja</a>
 </h3>
 <div class="listing-subtitle">
-
+<a href="./posts/vulvodynia/index.html" class="no-external"></a>
 </div>
-</a>
 <div class="listing-categories">
 <div class="listing-category" onclick="window.quartoListingCategory('vulvodynia'); return false;">
 vulvodynia
@@ -385,14 +417,12 @@ lantionpohjan toimintahäiriö
 lantionpohjan kipu
 </div>
 </div>
-<a href="./posts/vulvodynia/index.html">
 <div class="listing-description">
-<p>Vulvodynian hoidossa paras hoitovaste saavutetaan moniammatillisella yhteistyöllä</p>
+<a href="./posts/vulvodynia/index.html" class="no-external">Vulvodynian hoidossa paras hoitovaste saavutetaan moniammatillisella yhteistyöllä</a>
 </div>
-</a>
 </div>
 <div class="metadata">
-<a href="./posts/vulvodynia/index.html">
+<a href="./posts/vulvodynia/index.html" class="no-external">
 <div class="listing-date">
 2022-11-10
 </div>
@@ -402,19 +432,19 @@ Fysioterapeutti Eeva-Maria Halminen
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="5" data-categories="ikääntyminen,liikunta,tasapaino" data-listing-date-sort="1660770000000" data-listing-file-modified-sort="1678838347535" data-listing-date-modified-sort="1678658400000" data-listing-reading-time-sort="2">
+<div class="quarto-post image-right" data-index="5" data-categories="ikääntyminen,liikunta,tasapaino" data-listing-date-sort="1660770000000" data-listing-file-modified-sort="1678838347535" data-listing-date-modified-sort="1678658400000" data-listing-reading-time-sort="2" data-listing-word-count-sort="378">
 <div class="thumbnail">
-<p><a href="./posts/ikaantyneiden-liikunta-osa-4/index.html"> <img src="./posts/ikaantyneiden-liikunta-osa-4/pixabay.webp" class="thumbnail-image"> </a></p>
+<p><a href="./posts/ikaantyneiden-liikunta-osa-4/index.html" class="no-external"></a></p><a href="./posts/ikaantyneiden-liikunta-osa-4/index.html" class="no-external">
+<p><img loading="lazy" src="./posts/ikaantyneiden-liikunta-osa-4/pixabay.webp" class="thumbnail-image"></p>
+</a><p><a href="./posts/ikaantyneiden-liikunta-osa-4/index.html" class="no-external"></a></p>
 </div>
 <div class="body">
-<a href="./posts/ikaantyneiden-liikunta-osa-4/index.html">
 <h3 class="no-anchor listing-title">
-Ikääntyneiden liikunta, osa 4/4 TASAPAINO
+<a href="./posts/ikaantyneiden-liikunta-osa-4/index.html" class="no-external">Ikääntyneiden liikunta, osa 4/4 TASAPAINO</a>
 </h3>
 <div class="listing-subtitle">
-
+<a href="./posts/ikaantyneiden-liikunta-osa-4/index.html" class="no-external"></a>
 </div>
-</a>
 <div class="listing-categories">
 <div class="listing-category" onclick="window.quartoListingCategory('ikääntyminen'); return false;">
 ikääntyminen
@@ -426,14 +456,12 @@ liikunta
 tasapaino
 </div>
 </div>
-<a href="./posts/ikaantyneiden-liikunta-osa-4/index.html">
 <div class="listing-description">
-<p>Lihasvoimaa ja liikkuvuutta tarvitaan tasapainon säilyttämisessä</p>
+<a href="./posts/ikaantyneiden-liikunta-osa-4/index.html" class="no-external">Lihasvoimaa ja liikkuvuutta tarvitaan tasapainon säilyttämisessä</a>
 </div>
-</a>
 </div>
 <div class="metadata">
-<a href="./posts/ikaantyneiden-liikunta-osa-4/index.html">
+<a href="./posts/ikaantyneiden-liikunta-osa-4/index.html" class="no-external">
 <div class="listing-date">
 2022-08-18
 </div>
@@ -443,19 +471,19 @@ Fysioterapeutti Eeva-Maria Halminen
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="6" data-categories="ikääntyminen,liikunta,liikkuvuus,venyttely" data-listing-date-sort="1660424400000" data-listing-file-modified-sort="1678838332331" data-listing-date-modified-sort="1678658400000" data-listing-reading-time-sort="2">
+<div class="quarto-post image-right" data-index="6" data-categories="ikääntyminen,liikunta,liikkuvuus,venyttely" data-listing-date-sort="1660424400000" data-listing-file-modified-sort="1678838332331" data-listing-date-modified-sort="1678658400000" data-listing-reading-time-sort="2" data-listing-word-count-sort="384">
 <div class="thumbnail">
-<p><a href="./posts/ikaantyneiden-liikunta-osa-3/index.html"> <img src="./posts/ikaantyneiden-liikunta-osa-3/venyttely.webp" class="thumbnail-image"> </a></p>
+<p><a href="./posts/ikaantyneiden-liikunta-osa-3/index.html" class="no-external"></a></p><a href="./posts/ikaantyneiden-liikunta-osa-3/index.html" class="no-external">
+<p><img loading="lazy" src="./posts/ikaantyneiden-liikunta-osa-3/venyttely.webp" class="thumbnail-image"></p>
+</a><p><a href="./posts/ikaantyneiden-liikunta-osa-3/index.html" class="no-external"></a></p>
 </div>
 <div class="body">
-<a href="./posts/ikaantyneiden-liikunta-osa-3/index.html">
 <h3 class="no-anchor listing-title">
-Ikääntyneiden liikunta, osa 3/4 LIIKKUVUUS
+<a href="./posts/ikaantyneiden-liikunta-osa-3/index.html" class="no-external">Ikääntyneiden liikunta, osa 3/4 LIIKKUVUUS</a>
 </h3>
 <div class="listing-subtitle">
-
+<a href="./posts/ikaantyneiden-liikunta-osa-3/index.html" class="no-external"></a>
 </div>
-</a>
 <div class="listing-categories">
 <div class="listing-category" onclick="window.quartoListingCategory('ikääntyminen'); return false;">
 ikääntyminen
@@ -470,14 +498,12 @@ liikkuvuus
 venyttely
 </div>
 </div>
-<a href="./posts/ikaantyneiden-liikunta-osa-3/index.html">
 <div class="listing-description">
-<p>Riittävä liikkuvuus nivelissä helpottaa yksinkertaisia arjen toimintoja</p>
+<a href="./posts/ikaantyneiden-liikunta-osa-3/index.html" class="no-external">Riittävä liikkuvuus nivelissä helpottaa yksinkertaisia arjen toimintoja</a>
 </div>
-</a>
 </div>
 <div class="metadata">
-<a href="./posts/ikaantyneiden-liikunta-osa-3/index.html">
+<a href="./posts/ikaantyneiden-liikunta-osa-3/index.html" class="no-external">
 <div class="listing-date">
 2022-08-14
 </div>
@@ -487,19 +513,19 @@ Fysioterapeutti Eeva-Maria Halminen
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="7" data-categories="ikääntyminen,liikunta,lihasvoima,kestävyysliikunta,kestävyyskunto" data-listing-date-sort="1659819600000" data-listing-file-modified-sort="1678838316727" data-listing-date-modified-sort="1678658400000" data-listing-reading-time-sort="3">
+<div class="quarto-post image-right" data-index="7" data-categories="ikääntyminen,liikunta,lihasvoima,kestävyysliikunta,kestävyyskunto" data-listing-date-sort="1659819600000" data-listing-file-modified-sort="1678838316727" data-listing-date-modified-sort="1678658400000" data-listing-reading-time-sort="3" data-listing-word-count-sort="486">
 <div class="thumbnail">
-<p><a href="./posts/ikaantyneiden-liikunta-osa-2/index.html"> <img src="./posts/ikaantyneiden-liikunta-osa-2/pyora.jpg" class="thumbnail-image"> </a></p>
+<p><a href="./posts/ikaantyneiden-liikunta-osa-2/index.html" class="no-external"></a></p><a href="./posts/ikaantyneiden-liikunta-osa-2/index.html" class="no-external">
+<p><img loading="lazy" src="./posts/ikaantyneiden-liikunta-osa-2/pyora.jpg" class="thumbnail-image"></p>
+</a><p><a href="./posts/ikaantyneiden-liikunta-osa-2/index.html" class="no-external"></a></p>
 </div>
 <div class="body">
-<a href="./posts/ikaantyneiden-liikunta-osa-2/index.html">
 <h3 class="no-anchor listing-title">
-Ikääntyneiden liikunta, osa 2/4 KESTÄVYYSKUNTO
+<a href="./posts/ikaantyneiden-liikunta-osa-2/index.html" class="no-external">Ikääntyneiden liikunta, osa 2/4 KESTÄVYYSKUNTO</a>
 </h3>
 <div class="listing-subtitle">
-
+<a href="./posts/ikaantyneiden-liikunta-osa-2/index.html" class="no-external"></a>
 </div>
-</a>
 <div class="listing-categories">
 <div class="listing-category" onclick="window.quartoListingCategory('ikääntyminen'); return false;">
 ikääntyminen
@@ -517,14 +543,12 @@ kestävyysliikunta
 kestävyyskunto
 </div>
 </div>
-<a href="./posts/ikaantyneiden-liikunta-osa-2/index.html">
 <div class="listing-description">
-<p>Sydämen työmäärä vähenee kestävyyskunnon kohentuessa</p>
+<a href="./posts/ikaantyneiden-liikunta-osa-2/index.html" class="no-external">Sydämen työmäärä vähenee kestävyyskunnon kohentuessa</a>
 </div>
-</a>
 </div>
 <div class="metadata">
-<a href="./posts/ikaantyneiden-liikunta-osa-2/index.html">
+<a href="./posts/ikaantyneiden-liikunta-osa-2/index.html" class="no-external">
 <div class="listing-date">
 2022-08-07
 </div>
@@ -534,19 +558,19 @@ Fysioterapeutti Eeva-Maria Halminen
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="8" data-categories="ikääntyminen,liikunta,lihasvoima,voimaharjoittelu,kuntosali" data-listing-date-sort="1659474000000" data-listing-file-modified-sort="1678838359982" data-listing-date-modified-sort="1678658400000" data-listing-reading-time-sort="4">
+<div class="quarto-post image-right" data-index="8" data-categories="ikääntyminen,liikunta,lihasvoima,voimaharjoittelu,kuntosali" data-listing-date-sort="1659474000000" data-listing-file-modified-sort="1678838359982" data-listing-date-modified-sort="1678658400000" data-listing-reading-time-sort="4" data-listing-word-count-sort="686">
 <div class="thumbnail">
-<p><a href="./posts/ikaantyneiden-liikunta-osa-1/index.html"> <img src="./posts/ikaantyneiden-liikunta-osa-1/nojatuoli.jpg" class="thumbnail-image"> </a></p>
+<p><a href="./posts/ikaantyneiden-liikunta-osa-1/index.html" class="no-external"></a></p><a href="./posts/ikaantyneiden-liikunta-osa-1/index.html" class="no-external">
+<p><img loading="lazy" src="./posts/ikaantyneiden-liikunta-osa-1/nojatuoli.jpg" class="thumbnail-image"></p>
+</a><p><a href="./posts/ikaantyneiden-liikunta-osa-1/index.html" class="no-external"></a></p>
 </div>
 <div class="body">
-<a href="./posts/ikaantyneiden-liikunta-osa-1/index.html">
 <h3 class="no-anchor listing-title">
-Ikääntyneiden liikunta, osa 1/4 LIHASVOIMA
+<a href="./posts/ikaantyneiden-liikunta-osa-1/index.html" class="no-external">Ikääntyneiden liikunta, osa 1/4 LIHASVOIMA</a>
 </h3>
 <div class="listing-subtitle">
-
+<a href="./posts/ikaantyneiden-liikunta-osa-1/index.html" class="no-external"></a>
 </div>
-</a>
 <div class="listing-categories">
 <div class="listing-category" onclick="window.quartoListingCategory('ikääntyminen'); return false;">
 ikääntyminen
@@ -564,14 +588,12 @@ voimaharjoittelu
 kuntosali
 </div>
 </div>
-<a href="./posts/ikaantyneiden-liikunta-osa-1/index.html">
 <div class="listing-description">
-<p>Lihasvoima mahdollistaa toimintakyvyn</p>
+<a href="./posts/ikaantyneiden-liikunta-osa-1/index.html" class="no-external">Lihasvoima mahdollistaa toimintakyvyn</a>
 </div>
-</a>
 </div>
 <div class="metadata">
-<a href="./posts/ikaantyneiden-liikunta-osa-1/index.html">
+<a href="./posts/ikaantyneiden-liikunta-osa-1/index.html" class="no-external">
 <div class="listing-date">
 2022-08-03
 </div>
@@ -581,19 +603,19 @@ Fysioterapeutti Eeva-Maria Halminen
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="9" data-categories="hengitys,hengitysharjoitus,selkäkipu,hartiakipu,niska-hartiajännitys,pilates" data-listing-date-sort="1602795600000" data-listing-file-modified-sort="1678838302023" data-listing-date-modified-sort="1678658400000" data-listing-reading-time-sort="4">
+<div class="quarto-post image-right" data-index="9" data-categories="hengitys,hengitysharjoitus,selkäkipu,hartiakipu,niska-hartiajännitys,pilates" data-listing-date-sort="1602795600000" data-listing-file-modified-sort="1678838302023" data-listing-date-modified-sort="1678658400000" data-listing-reading-time-sort="4" data-listing-word-count-sort="777">
 <div class="thumbnail">
-<p><a href="./posts/hengitys/index.html"> <img src="./posts/hengitys/hengitys.webp" class="thumbnail-image"> </a></p>
+<p><a href="./posts/hengitys/index.html" class="no-external"></a></p><a href="./posts/hengitys/index.html" class="no-external">
+<p><img loading="lazy" src="./posts/hengitys/hengitys.webp" class="thumbnail-image"></p>
+</a><p><a href="./posts/hengitys/index.html" class="no-external"></a></p>
 </div>
 <div class="body">
-<a href="./posts/hengitys/index.html">
 <h3 class="no-anchor listing-title">
-Hengitys vaikuttaa selkäkipuun
+<a href="./posts/hengitys/index.html" class="no-external">Hengitys vaikuttaa selkäkipuun</a>
 </h3>
 <div class="listing-subtitle">
-
+<a href="./posts/hengitys/index.html" class="no-external"></a>
 </div>
-</a>
 <div class="listing-categories">
 <div class="listing-category" onclick="window.quartoListingCategory('hengitys'); return false;">
 hengitys
@@ -614,14 +636,12 @@ niska-hartiajännitys
 pilates
 </div>
 </div>
-<a href="./posts/hengitys/index.html">
 <div class="listing-description">
-<p>Hengitysharjoitukset ovat tehokkaita harjoituksia alaselkäkivun hoidossa ja ennaltaehkäisyssä</p>
+<a href="./posts/hengitys/index.html" class="no-external">Hengitysharjoitukset ovat tehokkaita harjoituksia alaselkäkivun hoidossa ja ennaltaehkäisyssä</a>
 </div>
-</a>
 </div>
 <div class="metadata">
-<a href="./posts/hengitys/index.html">
+<a href="./posts/hengitys/index.html" class="no-external">
 <div class="listing-date">
 2020-10-16
 </div>
@@ -631,19 +651,19 @@ Fysioterapeutti Eeva-Maria Halminen
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="10" data-categories="putkirullaus,lihaskalvot,lihakset,faskia,kehonhuolto,alkulämmittely" data-listing-date-sort="1594760400000" data-listing-file-modified-sort="1678840858508" data-listing-date-modified-sort="1678658400000" data-listing-reading-time-sort="3">
+<div class="quarto-post image-right" data-index="10" data-categories="putkirullaus,lihaskalvot,lihakset,faskia,kehonhuolto,alkulämmittely" data-listing-date-sort="1594760400000" data-listing-file-modified-sort="1678840858508" data-listing-date-modified-sort="1678658400000" data-listing-reading-time-sort="3" data-listing-word-count-sort="454">
 <div class="thumbnail">
-<p><a href="./posts/putkirullaus/index.html"> <img src="./posts/putkirullaus/rullaus.webp" class="thumbnail-image"> </a></p>
+<p><a href="./posts/putkirullaus/index.html" class="no-external"></a></p><a href="./posts/putkirullaus/index.html" class="no-external">
+<p><img loading="lazy" src="./posts/putkirullaus/rullaus.webp" class="thumbnail-image"></p>
+</a><p><a href="./posts/putkirullaus/index.html" class="no-external"></a></p>
 </div>
 <div class="body">
-<a href="./posts/putkirullaus/index.html">
 <h3 class="no-anchor listing-title">
-Putkirullaus eli Foam Rolling
+<a href="./posts/putkirullaus/index.html" class="no-external">Putkirullaus eli Foam Rolling</a>
 </h3>
 <div class="listing-subtitle">
-
+<a href="./posts/putkirullaus/index.html" class="no-external"></a>
 </div>
-</a>
 <div class="listing-categories">
 <div class="listing-category" onclick="window.quartoListingCategory('putkirullaus'); return false;">
 putkirullaus
@@ -664,14 +684,12 @@ kehonhuolto
 alkulämmittely
 </div>
 </div>
-<a href="./posts/putkirullaus/index.html">
 <div class="listing-description">
-<p>Putkirullaus virkistää lihaksia</p>
+<a href="./posts/putkirullaus/index.html" class="no-external">Putkirullaus virkistää lihaksia</a>
 </div>
-</a>
 </div>
 <div class="metadata">
-<a href="./posts/putkirullaus/index.html">
+<a href="./posts/putkirullaus/index.html" class="no-external">
 <div class="listing-date">
 2020-07-15
 </div>
@@ -681,19 +699,19 @@ Fysioterapeutti Eeva-Maria Halminen
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="11" data-categories="pilates,kehonhallinta,lantionpohja,vatsalihakset,core,ryhti,liikkuvuus" data-listing-date-sort="1585861200000" data-listing-file-modified-sort="1678837902643" data-listing-date-modified-sort="1678658400000" data-listing-reading-time-sort="2">
+<div class="quarto-post image-right" data-index="11" data-categories="pilates,kehonhallinta,lantionpohja,vatsalihakset,core,ryhti,liikkuvuus" data-listing-date-sort="1585861200000" data-listing-file-modified-sort="1678837902643" data-listing-date-modified-sort="1678658400000" data-listing-reading-time-sort="2" data-listing-word-count-sort="368">
 <div class="thumbnail">
-<p><a href="./posts/pilates/index.html"> <img src="./posts/pilates/pilates.webp" class="thumbnail-image"> </a></p>
+<p><a href="./posts/pilates/index.html" class="no-external"></a></p><a href="./posts/pilates/index.html" class="no-external">
+<p><img loading="lazy" src="./posts/pilates/pilates.webp" class="thumbnail-image"></p>
+</a><p><a href="./posts/pilates/index.html" class="no-external"></a></p>
 </div>
 <div class="body">
-<a href="./posts/pilates/index.html">
 <h3 class="no-anchor listing-title">
-PILATES - Vahva, elastinen ja tasapainoinen keho
+<a href="./posts/pilates/index.html" class="no-external">PILATES - Vahva, elastinen ja tasapainoinen keho</a>
 </h3>
 <div class="listing-subtitle">
-
+<a href="./posts/pilates/index.html" class="no-external"></a>
 </div>
-</a>
 <div class="listing-categories">
 <div class="listing-category" onclick="window.quartoListingCategory('pilates'); return false;">
 pilates
@@ -717,14 +735,12 @@ ryhti
 liikkuvuus
 </div>
 </div>
-<a href="./posts/pilates/index.html">
 <div class="listing-description">
-<p>Pilatesharjoittelu parantaa kehonhallintaa</p>
+<a href="./posts/pilates/index.html" class="no-external">Pilatesharjoittelu parantaa kehonhallintaa</a>
 </div>
-</a>
 </div>
 <div class="metadata">
-<a href="./posts/pilates/index.html">
+<a href="./posts/pilates/index.html" class="no-external">
 <div class="listing-date">
 2020-04-03
 </div>
@@ -774,18 +790,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }
     return false;
   }
-  const clipboard = new window.ClipboardJS('.code-copy-button', {
-    text: function(trigger) {
-      const codeEl = trigger.previousElementSibling.cloneNode(true);
-      for (const childEl of codeEl.children) {
-        if (isCodeAnnotation(childEl)) {
-          childEl.remove();
-        }
-      }
-      return codeEl.innerText;
-    }
-  });
-  clipboard.on('success', function(e) {
+  const onCopySuccess = function(e) {
     // button target
     const button = e.trigger;
     // don't keep focus
@@ -817,11 +822,50 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }, 1000);
     // clear code selection
     e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
   });
-  function tippyHover(el, contentFn) {
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    // For code content inside modals, clipBoardJS needs to be initialized with a container option
+    // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    });
+    clipboardModal.on('success', onCopySuccess);
+  }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp('/' + window.location.host + '/');
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
     const config = {
       allowHTML: true,
-      content: contentFn,
       maxWidth: 500,
       delay: 100,
       arrow: false,
@@ -831,8 +875,17 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       interactive: true,
       interactiveBorder: 10,
       theme: 'quarto',
-      placement: 'bottom-start'
+      placement: 'bottom-start',
     };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
     window.tippy(el, config); 
   }
   const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
@@ -844,7 +897,130 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       try { href = new URL(href).hash; } catch {}
       const id = href.replace(/^#\/?/, "");
       const note = window.document.getElementById(id);
-      return note.innerHTML;
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      // TODO in 1.5, we should make sure this works without a callout special case
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
     });
   }
       let selectedAnnoteEl;
@@ -888,6 +1064,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
             }
             div.style.top = top - 2 + "px";
             div.style.height = height + 4 + "px";
+            div.style.left = 0;
             let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
             if (gutterDiv === null) {
               gutterDiv = window.document.createElement("div");
@@ -913,6 +1090,32 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
         });
         selectedAnnoteEl = undefined;
       };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
       // Attach click handler to the DT
       const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
       for (const annoteDlNode of annoteDls) {
@@ -1011,6 +1214,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     </div>
   </div>
 </footer>
+
 
 
 
